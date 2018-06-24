@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Worker that creates static DOM dumps of web pages for archival purposes.",
   "dependencies": {
+    "fivebeans": "^1.5.0",
     "freeze-dry": "^0.1.2"
   },
   "author": {
