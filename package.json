@@ -1,0 +1,14 @@
+{
+  "name": "beanstalkd-web-archiver",
+  "version": "0.0.1",
+  "description": "Worker that creates static DOM dumps of web pages for archival purposes.",
+  "dependencies": {
+    "freeze-dry": "^0.1.2"
+  },
+  "author": {
+    "name": "Martijn van der Ven",
+    "email": "martijn@vanderven.se",
+    "url": "https://vanderven.se/martijn/"
+  },
+  "license": "0BSD"
+}
