@@ -11,5 +11,6 @@
     "email": "martijn@vanderven.se",
     "url": "https://vanderven.se/martijn/"
   },
-  "license": "0BSD"
+  "license": "0BSD",
+  "private": true
 }
