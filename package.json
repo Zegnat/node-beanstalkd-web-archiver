@@ -4,6 +4,7 @@
   "description": "Worker that creates static DOM dumps of web pages for archival purposes.",
   "dependencies": {
     "babel-runtime": "^6.26.0",
+    "browserify": "^16.2.2",
     "fivebeans": "^1.5.0",
     "freeze-dry": "^0.1.2",
     "puppeteer": "^1.5.0"
@@ -12,6 +13,9 @@
     "name": "Martijn van der Ven",
     "email": "martijn@vanderven.se",
     "url": "https://vanderven.se/martijn/"
+  },
+  "scripts": {
+    "postinstall": "node compileMasterFunction.js"
   },
   "license": "0BSD",
   "private": true
