@@ -8,6 +8,8 @@ const url = 'https://example.org/';
   // Launch Chromium and get a Page to work with.
   const browser = await puppeteer.launch({headless: false})
   const page = await browser.newPage()
+  // Does this fix stuff?
+  await page.setBypassCSP(true)
   // Set a viewport, this will mostly come into play for screenshots.
   await page.setViewport({width: 1024, height: 578, deviceScaleFactor: 2})
   // Load a page, and wait until it stops loading external resources.
