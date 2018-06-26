@@ -15,8 +15,12 @@
     "url": "https://vanderven.se/martijn/"
   },
   "scripts": {
-    "postinstall": "node compileMasterFunction.js"
+    "postinstall": "node compileMasterFunction.js",
+    "check-style": "standard"
   },
   "license": "0BSD",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
 }
