@@ -15,7 +15,8 @@
   },
   "scripts": {
     "postinstall": "node compileMasterFunction.js",
-    "check-style": "standard"
+    "check-style": "standard",
+    "start": "beanworker --id='web-archiver' --config='beanworker-config.yml'"
   },
   "license": "0BSD",
   "private": true,
