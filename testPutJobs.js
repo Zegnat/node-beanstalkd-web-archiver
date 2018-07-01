@@ -3,12 +3,14 @@ const FivebeansClient = require('fivebeans').client
 const emitter = new FivebeansClient('localhost', 11300)
 const tube = 'webarchive'
 
+const saveDir = path.resolve(__dirname, 'tests')
+
 const joblist = [
   {
     type: 'node-beanstalkd-web-archiver',
     payload: {
-      screenshot: path.resolve(__dirname, 'example.com.png'),
-      html: path.resolve(__dirname, 'example.com.html')
+      screenshot: saveDir + '/example.com.png',
+      html: saveDir + '/example.com.html'
     }
   },
   {
@@ -21,22 +23,22 @@ const joblist = [
     type: 'node-beanstalkd-web-archiver',
     payload: {
       url: 'https://example.com/',
-      html: path.resolve(__dirname, 'example.com.html')
+      html: saveDir + '/example.com.html'
     }
   },
   {
     type: 'node-beanstalkd-web-archiver',
     payload: {
       url: 'https://example.org/',
-      screenshot: path.resolve(__dirname, 'example.org.html')
+      screenshot: saveDir + '/example.org.png'
     }
   },
   {
     type: 'node-beanstalkd-web-archiver',
     payload: {
       url: 'https://example.net/',
-      html: path.resolve(__dirname, 'example.net.html'),
-      screenshot: path.resolve(__dirname, 'example.net.png')
+      html: saveDir + '/example.net.html',
+      screenshot: saveDir + '/example.net.png'
     }
   }
 ]
@@ -58,4 +60,5 @@ emitter.on('connect', () => {
     looper()
   })
 })
+
 emitter.connect()

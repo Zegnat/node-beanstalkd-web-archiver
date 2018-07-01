@@ -16,7 +16,8 @@
   "scripts": {
     "postinstall": "node compileMasterFunction.js",
     "check-style": "standard",
-    "start": "beanworker --id='web-archiver' --config='beanworker-config.yml'"
+    "start": "beanworker --id='web-archiver' --config='beanworker-config.yml'",
+    "start-debian": "beanworker --id='web-archiver' --config='beanworker-config.yml' debian"
   },
   "license": "0BSD",
   "private": true,
