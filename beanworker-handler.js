@@ -29,9 +29,20 @@ module.exports = () => ({
       return
     }
 
+    // A hacky fix due to Puppeteer issue on Debian
+    // https://github.com/GoogleChrome/puppeteer/issues/290
+    // these flags are executed when 'npm run start-debian'
+    let puppeteerArgs = []
+    if (process.argv[4] && process.argv[4] == 'debian') {
+        puppeteerArgs = ['--no-sandbox', '--disable-setuid-sandbox']
+    }
+
     // Get working!
     // Launch Chromium and get a Page to work with.
-    const browser = await puppeteer.launch({headless: !false})
+    const browser = await puppeteer.launch({
+        headless: !false,
+        args: puppeteerArgs
+    })
     const page = await browser.newPage()
     // This seems to fix some websites that do not allow resources to be inlined.
     await page.setBypassCSP(true)
